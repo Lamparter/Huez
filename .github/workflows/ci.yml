@@ -16,19 +16,34 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '11' # Replace with your desired Java version
+          java-version: '11'
 
-      - name: Set up Android SDK
-        uses: actions/setup-android@v2
+      - name: Download Android SDK Command-Line Tools
+        uses: actions/download-artifact@v3
         with:
-          distribution: 'stable'
-          api-level: '34'
+          name: android-sdk-cmdline-tools
+          path: android-sdk-cmdline-tools
+
+      - name: Extract Android SDK Command-Line Tools
+        run: unzip android-sdk-cmdline-tools.zip -d android-sdk-cmdline-tools
+
+      - name: Accept Android SDK Licenses
+        run: ./android-sdk-cmdline-tools/bin/sdkmanager --licenses
+
+      - name: Install Android SDK Packages
+        run: ./android-sdk-cmdline-tools/bin/sdkmanager "platforms;android-33" "build-tools;33.0.0"
 
       - name: Install dependencies
         run: ./gradlew dependencyCache:clear
 
       - name: Build app
         run: ./gradlew clean build
+
+      - name: Run unit tests
+        run: ./gradlew test
+
+      - name: Check code formatting
+        run: ./gradlew ktlintCheck
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
