@@ -1,6 +1,6 @@
 # 🚠 Huez
 
-#### Your one stop shop for Alpe Huez
+#### Your one stop shop for all things Alpe Huez
 
 <p align="center">
   <a title="GitHub Releases" target="_blank" href="https://github.com/Lamparter/Huez/releases/latest">
