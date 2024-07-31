@@ -1,6 +1,6 @@
 # 🚠 Huez
 
-#### Your one stop shop for all things Alpe Huez
+#### Alpe Huez in your pocket!
 
 <p align="center">
   <a title="GitHub Releases" target="_blank" href="https://github.com/Lamparter/Huez/releases/latest">
@@ -14,6 +14,10 @@
 <br/>
 
 ---
+
+> [!IMPORTANT]
+> This app is not approved, maintained nor was explicitly requested by the _Société d’Aménagement Touristique de l’Alpe d’Huez et des Grandes Rousses_.
+> This is merely a recreation of the resort experience app **Alpe d'Huez AEON** with a more interactive, informative and visually appealing feel to it.
 
 <!--## 🎁 Download
 
